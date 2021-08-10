@@ -19,7 +19,7 @@ if (!isset($_GET['url_video']) || empty($_GET['url_video'])) { // Kondisi jika p
 $target = $_GET['url_video'];
 $url_video = new simple_html_dom();
 $url_video = file_get_html("https://tiktokdownloader.one");
-$token = $url_video->find("meta", 2)->content;
+$token = $url_video->find("meta", 2)->content; // Ambil token downloader pada tag meta
 $endPoit = "https://tiktokdownloader.one/api/v1/fetch?url=$target&is_copy_url=1";
 $header = [
     "token: $token",
